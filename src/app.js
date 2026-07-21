@@ -21,4 +21,25 @@ app.use(express.static("public"))
 
 app.use(cookieParser())
 
+// app.use((req, res, next) => {
+//     console.log(req.method, req.url);
+//     next();
+// });
+
+
+// app.get("/", (req, res) => {
+//     res.send("Server is working");
+// });
+
+// Routes
+
+import userRouter from './routes/user.routes.js'
+
+
+// routes declearation
+
+app.use("/api/v1/users", userRouter)
+
+//https://localhost:8000/api/v1/users/register
+
 export { app }
